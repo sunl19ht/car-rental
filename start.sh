@@ -1,0 +1,1 @@
+nohup java -jar -Duser.timezone=Asia/Shanghai ./target/car-rental-1.0-SNAPSHOT.jar > logfile.log 2>&1 & # 后台运行

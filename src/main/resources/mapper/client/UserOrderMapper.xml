@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunl19ht.client.mapper.UserOrderMapper">
+
+    <insert id="addOrder">
+        insert into orders
+            (order_number,car_id,rental_start_time,
+             rental_end_time,pickup_date,return_date,
+             pickup_location,return_location,user_id,
+             insurance_type,total_price,discount,
+             payment_status,created_at,updated_at)
+        values
+            (#{orderNumber},#{carId},#{rentalStartTime},
+             #{rentalEndTime},#{pickupDate},#{returnDate},
+             #{pickupLocation},#{returnLocation},#{userId},
+             #{insuranceType},#{totalPrice},#{discount},
+             #{paymentStatus},#{createAt},#{updateAt})
+    </insert>
+
+</mapper>

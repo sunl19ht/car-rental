@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunl19ht.client.mapper.UseCarMapper">
+    <select id="findAvailableCarIds" resultType="com.sunl19ht.client.pojo.vo.UseCarVO">
+        SELECT c.*
+        FROM cars c
+        WHERE c.is_delete = 0
+        AND NOT EXISTS (
+        SELECT 1
+        FROM deactivate_cars dc
+        WHERE dc.car_id = c.id
+        AND NOT (dc.end_time &lt;= #{pickupTime} OR dc.start_time &gt;=  #{returnTime})
+        );
+    </select>
+</mapper>

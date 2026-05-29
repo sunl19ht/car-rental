@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunl19ht.mapper.CarMapper">
+    <update id="updateCar" parameterType="com.sunl19ht.pojo.dto.CarDTO">
+        update cars
+        <set>
+            <if test="carBrand != null and carBrand!='' ">
+                car_brand=#{carBrand},
+            </if>
+            <if test="licensePlate != null and licensePlate!='' ">
+                license_plate=#{licensePlate},
+            </if>
+            <if test="carType != null">
+                car_type=#{carType},
+            </if>
+            <if test="imageUrl != null">
+                image_url=#{imageUrl},
+            </if>
+            <if test="seat != null">
+                seat=#{seat},
+            </if>
+            <if test="gearbox != null">
+                gearbox=#{gearbox},
+            </if>
+            <if test="carYear != null">
+                car_year=#{carYear},
+            </if>
+            <if test="trait != null">
+                trait = #{trait},
+            </if>
+            <if test="suffix != null">
+                suffix = #{suffix},
+            </if>
+            <if test="weekendPriceFake != null">
+                weekend_price_fake = #{weekendPriceFake},
+            </if>
+            <if test="normalPriceFake != null">
+                normal_price_fake = #{normalPriceFake},
+            </if>
+            <if test="weekendPrice != null">
+                weekend_price = #{weekendPrice},
+            </if>
+            <if test="normalPrice != null">
+                normal_price = #{normalPrice},
+            </if>
+        </set>
+        where id = #{id};
+    </update>
+</mapper>
