@@ -49,7 +49,6 @@ public class UserServiceImpl implements UserService {
             // 新用户
             user = User.builder().openid(openid)
                     .createTime(LocalDateTime.now())
-//                    .phone("15221693410")
                     .build();
             userMapper.insert(user);
         }
