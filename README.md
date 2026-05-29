@@ -176,4 +176,4 @@ nohup java -jar target/car-rental-1.0-SNAPSHOT.jar > app.log 2>&1 &
 
 ## 许可证
 
-仅供学习和面试展示使用。
+敏感数据已进行脱敏处理，仅供面试展示使用。
